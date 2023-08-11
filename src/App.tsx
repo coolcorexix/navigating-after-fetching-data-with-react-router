@@ -78,7 +78,8 @@ function App() {
     <div className="App">
       <h1>Navigate only after fetching data PoC</h1>
 
-      <div>Step 0: click on &nbsp;
+      <div>
+        Step 0: click on &nbsp;
         <Link
           onClick={() => {
             resetData();
@@ -89,11 +90,15 @@ function App() {
         </Link>
       </div>
       <div>
-        <Link to="/not-have-loading">This link will NOT show loading state</Link>
+        Step 1: either click on &nbsp;{" "}
+        <Link to="/not-have-loading">
+          This link will NOT show loading state
+        </Link>{" "}
+        or <Link to="/have-loading">This link will show loading state</Link>
+        <br />
+        Once done, click on the step 0 and click on other link to see the difference
       </div>
-      <div>
-        <Link to="/have-loading">This link will show loading state</Link>
-      </div>
+      <div></div>
 
       <Switch>
         <Route path="/have-loading" component={APageThatNeedFetchingData} />
